@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results | Code Typing Speed</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark results-page">
+  <div class="container">
+    <h1 data-t="results_title">Your Results</h1>
+    <div class="results-card">
+      <div class="result-item">
+        <span data-t="time_taken">Time Taken</span>
+        <strong id="timeTaken">-</strong>
+      </div>
+      <div class="result-item">
+        <span data-t="characters_typed">Characters Typed</span>
+        <strong id="charsTyped">-</strong>
+      </div>
+      <div class="result-item">
+        <span data-t="cpm">Characters Per Minute</span>
+        <strong id="cpm">-</strong>
+      </div>
+      <div class="result-item">
+        <span data-t="accuracy">Accuracy</span>
+        <strong id="accuracy">-</strong>
+      </div>
+      <div class="result-item">
+        <span data-t="errors">Errors</span>
+        <strong id="errors">-</strong>
+      </div>
+      <div class="result-item evaluation">
+        <span data-t="evaluation">Evaluation</span>
+        <strong id="evaluation" class="highlight">-</strong>
+      </div>
+    </div>
+    <button id="againBtn" class="primary large" data-t="try_again">Try Again</button>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      applyTranslations();
+      displayResults();
+      document.getElementById("againBtn").addEventListener("click", () => {
+        location.href = "index.html";
+      });
+    });
+  </script>
+</body>
+</html>

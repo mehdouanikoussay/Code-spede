@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Typing Speed Challenge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 data-t="title">Code Typing Speed Challenge</h1>
+    <div class="card">
+      <label data-t="select_language">Select Language</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+      </select>
+
+      <label data-t="skill_level">Skill Level</label>
+      <select id="level">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+
+      <label data-t="programming_language">Programming Language</label>
+      <select id="progLang">
+        <option value="javascript">JavaScript</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="python">Python</option>
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+        <option value="java">Java</option>
+        <option value="node">Node.js</option>
+        <option value="react">React</option>
+      </select>
+
+      <button id="startBtn" data-t="start_challenge">Start Challenge</button>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("startBtn").addEventListener("click", () => {
+      const lang = document.getElementById("language").value;
+      const level = document.getElementById("level").value;
+      const progLang = document.getElementById("progLang").value;
+
+      window.currentConfig = { lang, level, progLang };
+      window.location.href = "challenge.html";
+    });
+
+    // Apply language on load
+    document.addEventListener("DOMContentLoaded", applyTranslations);
+  </script>
+</body>
+</html>
